@@ -5,7 +5,12 @@ import DialogContent from "@mui/material/DialogContent";
 
 export default function MusicComponent({ openMusic, handleClosePLotMusic }) {
   return (
-    <Dialog open={openMusic} onClose={handleClosePLotMusic} scroll="paper">
+    <Dialog
+      open={openMusic}
+      onClose={handleClosePLotMusic}
+      scroll="paper"
+      id="musicModalStyles"
+    >
       <DialogTitle id="scroll-dialog-title">Music</DialogTitle>
       <DialogContent>
         <p>

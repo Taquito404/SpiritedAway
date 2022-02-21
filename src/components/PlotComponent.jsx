@@ -5,7 +5,12 @@ import DialogContent from "@mui/material/DialogContent";
 
 export default function PlotComponent({ openPlot, handleClosePLot }) {
   return (
-    <Dialog open={openPlot} onClose={handleClosePLot} scroll="paper">
+    <Dialog
+      open={openPlot}
+      onClose={handleClosePLot}
+      scroll="paper"
+      id="plotModalStyle"
+    >
       <DialogTitle id="scroll-dialog-title">Plot</DialogTitle>
       <DialogContent>
         <p>

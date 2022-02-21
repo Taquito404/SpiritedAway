@@ -1,9 +1,22 @@
+$darkGreen:#387156;
+$boldGreen:#5b9680;
+$greyGreen:#ebf1ee; 
 
-// font-family: 'Gaegu', cursive;
-// font-family: 'Nunito', sans-serif;
+$pinkContrastSoft:#e5d2d8;
+$pinkContrastBold:#ee97b3;
+
+@keyframes movingAnimation {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+  }
+
 body {
     background: url('./resources/images/bgCouchDT.jpg') ;
     background-repeat: no-repeat;background-size: cover;
+    font-family: 'Nunito', sans-serif;
 }
 .headerContainer {
     font-family: 'Gaegu', cursive;
@@ -21,7 +34,7 @@ body {
 
 .bodyMoviesContainer {
     margin: 2rem 0 0 0;
-    // background-color: magenta;
+
     .movieImage{
         background-image: url('./resources/images/movie.png'); 
         height: 20rem;
@@ -31,11 +44,10 @@ body {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         &:hover{
             cursor: pointer;
+            animation: movingAnimation 0.25s 2;
         }
     }
-//     .hoverMovieImage{
-// position: fixed;
-//     }
+
     .plotImage{
         background-image: url('./resources/images/characters.png');
         height: 10rem;
@@ -45,22 +57,29 @@ body {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         &:hover{
             cursor: pointer;
+            animation: movingAnimation 0.25s 2;
         }
     }
     .musicImage{
         background-image: url('./resources/images/wiki.png');
         height: 6rem;
         width: 6rem;
+        margin: 3.5rem 0 0 2rem;
         background-size: contain;
         background-repeat: no-repeat;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-     &:hover{
+        &:hover{
             cursor: pointer;
+            animation: movingAnimation 0.25s 2;
         }
     }  
 }
-.reviewContainer{
-    // background-color: aqua;
+.MuiRating-root.MuiRating-sizeLarge.MuiRating-readyOnly{
+    width: 18rem;
+    
+    justify-content: center;
+}
+.reviewContainer{  
     width: 18rem;
     height: 18rem;
     border-radius: 1rem;
@@ -68,22 +87,91 @@ body {
     border-width: .2rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
+    .reviewElements {
+        box-sizing: content-box;
+        height: 15.5rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+       padding: 1rem;
+        p{
+            font-size: 1.1rem;
+            i{
+                font-size: .9rem;
+            }
+        }
+
+    } ::-webkit-scrollbar {
+        width: .3rem;
+     
+    } ::-webkit-scrollbar-track{
+        background-color: $greyGreen; 
+        border-radius: .5rem;
+        margin: .5rem 0; 
+    } ::-webkit-scrollbar-thumb {
+        background-color:  $darkGreen;
+        border-radius: .5rem;
+    }
 }
 .footerContainer{
-    background-color: teal;
+    background-color: #387156;
     width: 100%;
-    height: 5vh;
+    height: 7vh;
     position: fixed;
-    top: 95vh;
-}
-.tooltip{
-  background-color: teal!important;
+    top: 93vh;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    a{
+        &:hover{
+            svg{
+             fill:$pinkContrastBold;
+            }
+    }
+     }
+    svg{
+        fill: $pinkContrastSoft;
+        width: 2rem;
+        height: 2rem;  
+    }
+    Button{
+        color: $pinkContrastSoft;
+    }:hover{  
+         color:$pinkContrastBold;   
+        }
 }
 
-.MuiDialog-container{
-    
+
+#videoEmbed .MuiDialog-container{
     .MuiDialogContent-root{
     padding: 0!important;
-}
+    }
 }
 
+#plotModalStyle .MuiDialog-container, #musicModalStyles  .MuiDialog-container, #attrModel .MuiDialog-container{
+   
+    .MuiPaper-root{
+     max-height: 80vh; border-radius: 1rem;
+      h2{
+          background-color: $boldGreen;
+          color:$greyGreen;
+          font-size: 2rem;
+          padding: 0 1.5rem;
+      }
+    .MuiDialogContent-root{
+        background-color: $greyGreen;
+        padding: 1.5rem 2rem;
+        }  
+    }
+    ::-webkit-scrollbar {
+        width: .5rem;
+     
+    } ::-webkit-scrollbar-track{
+        background-color:  $darkGreen;
+      
+        border-radius: .5rem;
+        margin: .5rem 0; 
+    } ::-webkit-scrollbar-thumb {
+        background-color: $pinkContrastSoft; 
+        border-radius: .5rem;
+        border: 1px solid $boldGreen;
+    }
+        
+}

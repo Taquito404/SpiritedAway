@@ -4,7 +4,7 @@ import DialogContent from "@mui/material/DialogContent";
 
 export default function EmbedVideo({ openTrailer, handleCloseTrailer }) {
   return (
-    <Dialog open={openTrailer} onClose={handleCloseTrailer}>
+    <Dialog open={openTrailer} onClose={handleCloseTrailer} id="videoEmbed">
       <DialogContent>
         <iframe
           width="560"

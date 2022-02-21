@@ -5,10 +5,21 @@ import DialogContent from "@mui/material/DialogContent";
 
 export default function MusicComponent({ openMusic, handleClosePLotMusic }) {
   return (
-    <Dialog open={openMusic} onClose={handleClosePLotMusic} scroll="paper">
-      <DialogTitle id="scroll-dialog-title">Music</DialogTitle>
+    <Dialog
+      open={openMusic}
+      onClose={handleClosePLotMusic}
+      scroll="paper"
+      id="attrModel"
+    >
+      <DialogTitle id="scroll-dialog-title">Attributions</DialogTitle>
       <DialogContent>
-        <p>ihniuhniuhiuh</p>
+        <a href="https://www.freepik.es/vectores/marco">
+          Vector de Marco creado por macrovector - www.freepik.es
+        </a>
+        <br />
+        <a href="https://www.freepik.es/fotos/fondo">
+          Foto de Fondo creado por vanitjan - www.freepik.es
+        </a>
       </DialogContent>
     </Dialog>
   );

@@ -8,6 +8,7 @@ import ChairOutlinedIcon from "@mui/icons-material/ChairOutlined";
 import EmbedVideo from "./EmbedVideo";
 import PlotComponent from "./PlotComponent";
 import MusicComponent from "./MusicComponent";
+import ReviewBox from "./ReviewBox";
 
 export default function BodyMovies() {
   const [openTrailer, setOpenTrailer] = useState(false);
@@ -37,9 +38,6 @@ export default function BodyMovies() {
     "& .MuiRating-iconFilled": {
       color: "pink",
     },
-    // "& .MuiRating-iconHover": {
-    //   color: "#ff3d47",
-    // },
   });
 
   return (
@@ -81,7 +79,7 @@ export default function BodyMovies() {
                   <div className="plotImage"></div>
                 </Tooltip>
                 <Tooltip
-                  title="Plot"
+                  title="Music"
                   placement="left"
                   TransitionComponent={Zoom}
                   onClick={() => {
@@ -96,13 +94,14 @@ export default function BodyMovies() {
           <div className="col-4">
             <StyledRating
               name="read-only"
-              value={5}
+              value={4.5}
               readOnly
               precision={0.5}
               icon={<ChairIcon fontSize="inherit" />}
               emptyIcon={<ChairOutlinedIcon fontSize="inherit" />}
+              size="large"
             />
-            <div className="reviewContainer"></div>
+            <ReviewBox />
           </div>
         </div>
       </div>
